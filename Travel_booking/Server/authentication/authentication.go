@@ -28,13 +28,10 @@ func SetAuthenticationConfig() ([]model.User, error) {
 	for _, value := range userlogindetails {
 		log.Printf("Username: %s, Password: %s", value.Username, value.Password)
 	}
-	//log.Printf("credentials in userlogindetails- Username:%s, Password:%s",)
+
 	return userlogindetails, err
 
 }
-
-// var hardcodedUsername = "admin"
-// var hardcodedPassword = "admin@123"
 
 func AuthMiddleware(userlogindetails []model.User) gin.HandlerFunc {
 	return func(c *gin.Context) {
